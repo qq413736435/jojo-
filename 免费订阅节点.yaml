@@ -14,36 +14,51 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - {"type":"vless","name":"🇭🇰香港1","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk1.342579.xyz"}}}
-  - {"type":"vless","name":"🇭🇰香港2","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk2.342579.xyz"}}}
-  - {"type":"vless","name":"🇭🇰香港3","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk3.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk3.342579.xyz"}}}
-  - {"type":"vless","name":"🇭🇰香港4","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk4.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk4.342579.xyz"}}}
-  - {"type":"vless","name":"🇭🇰香港5","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk5.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk5.342579.xyz"}}}
-  - {"type":"vless","name":"🇭🇰香港6","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"hk6.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"hk6.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本1","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp1.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本2","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp2.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本3","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp3.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp3.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本4","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp4.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp4.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本5","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp5.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp5.342579.xyz"}}}
-  - {"type":"vless","name":"🇯🇵日本6","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"jp6.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"jp6.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡1","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg1.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡2","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg2.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡3","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg3.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg3.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡4","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg4.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg4.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡5","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg5.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg5.342579.xyz"}}}
-  - {"type":"vless","name":"🇸🇬新加坡6","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"sg6.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"sg6.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国1","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us1.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国2","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us2.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国3","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us3.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us3.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国4","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us4.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us4.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国5","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us5.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us5.342579.xyz"}}}
-  - {"type":"vless","name":"🇺🇸美国6","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"us6.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"us6.342579.xyz"}}}
-  - {"type":"vless","name":"🇬🇧英国1","server":"apo.342579.xyz","port":2095,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"uk1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"uk1.342579.xyz"}}}
-  - {"type":"vless","name":"🇬🇧英国2","server":"apo.342579.xyz","port":2082,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"uk2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"uk2.342579.xyz"}}}
-  - {"type":"vless","name":"🇹🇷土耳其1","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"tr1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"tr1.342579.xyz"}}}
-  - {"type":"vless","name":"🇹🇷土耳其2","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"tr2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"tr2.342579.xyz"}}}
-  - {"type":"vless","name":"🇳🇱防失联https://kelayun.notepin.co","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"nl1.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"nl1.342579.xyz"}}}
-  - {"type":"vless","name":"🇳🇱永久官网https://kelayun.notepin.co","server":"apo.342579.xyz","port":2086,"uuid":"dffb8a71-3cc9-4fe7-b360-d6c317760ab7","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"nl2.342579.xyz","ws-opts":{"path":"/abc","headers":{"host":"nl2.342579.xyz"}}}
+  - {"type":"vmess","name":"香港测试3-解锁","ws-opts":{"path":"/","headers":{"host":"hk-bage-year-8t.xiao666666.site"}},"server":"cf.090227.xyz","port":"80","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"台湾家宽","server":"xq.751334.xyz","port":"11006","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"新加坡家宽","server":"xq.751334.xyz","port":"11007","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"马来西亚家宽","server":"xq.751334.xyz","port":"11009","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vless","name":"日本bage直连","server":"jp-bage1.xiao666666.site","port":443,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"download-porter.hoyoverse.com","tls":false,"udp":true}
+  - {"type":"vmess","name":"印度尼西亚家宽","server":"xq.751334.xyz","port":"11054","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"日本家宽1","server":"xq.751334.xyz","port":"11004","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"越南家宽","server":"xq.751334.xyz","port":"11020","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"韩国家宽2","server":"xq.751334.xyz","port":"11053","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"拉脱维亚家宽","server":"xq.751334.xyz","port":"11045","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"瑞典家宽","server":"xq.751334.xyz","port":"11052","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"美国测试-解锁","ws-opts":{"path":"/","headers":{"host":"us-lsj-cf.yiyuan.live"}},"server":"cf.090227.xyz","port":"80","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"韩国家宽1","server":"xq.751334.xyz","port":"11016","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"芬兰家宽","server":"xq.751334.xyz","port":"11037","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vless","name":"🇩🇪德国稳定","server":"bagedg.xiaoqi888.online","port":30000,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"download-porter.hoyoverse.com","tls":false,"udp":true}
+  - {"type":"vmess","name":"瑞士家宽","server":"xq.751334.xyz","port":"11005","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"罗马尼亚家宽","server":"xq.751334.xyz","port":"11015","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"英国家宽","server":"xq.751334.xyz","port":"11011","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽1","server":"xq.751334.xyz","port":"11031","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽2","server":"xq.751334.xyz","port":"11032","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"捷克家宽","server":"xq.751334.xyz","port":"11036","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽3","server":"xq.751334.xyz","port":"11014","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"法国家宽","server":"xq.751334.xyz","port":"11013","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"荷兰家宽","server":"xq.751334.xyz","port":"11047","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"匈牙利家宽","server":"xq.751334.xyz","port":"11008","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"以色列测试","ws-opts":{"path":"/","headers":{"host":"ysl-cf.yiyuan.live"}},"server":"cf.090227.xyz","port":"80","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"西班牙家宽","server":"xq.751334.xyz","port":"11000","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"美国家宽1","server":"xq.751334.xyz","port":"11001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"德国家宽","server":"xq.751334.xyz","port":"11012","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"意大利家宽","server":"xq.751334.xyz","port":"11017","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"比利时家宽","server":"xq.751334.xyz","port":"11018","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"澳大利亚测试","ws-opts":{"path":"/","headers":{"host":"au-oracle.yiyuan.live"}},"server":"cf.090227.xyz","port":"80","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"挪威家宽","server":"xq.751334.xyz","port":"11048","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"美国家宽2","server":"xq.751334.xyz","port":"11002","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"波兰家宽","server":"xq.751334.xyz","port":"11049","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"哥伦比亚家宽","server":"xq.751334.xyz","port":"11034","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"南非家宽","server":"xq.751334.xyz","port":"11019","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"墨西哥家宽","server":"xq.751334.xyz","port":"11003","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"智利家宽","server":"xq.751334.xyz","port":"11033","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"哥斯达黎加家宽","server":"xq.751334.xyz","port":"11035","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"留尼汪家宽","server":"xq.751334.xyz","port":"11051","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"巴拉圭家宽","server":"xq.751334.xyz","port":"11050","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"纳米比亚家宽","server":"xq.751334.xyz","port":"11046","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"trojan","name":"🇯🇵日本02","server":"zhaji188.klian.icu","port":48006,"password":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","udp":true,"skip-cert-verify":true,"sni":"jp02.xiaoqi888.online","network":"tcp"}
+  - {"type":"vmess","name":"立陶苑家宽","server":"xq.751334.xyz","port":"11010","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
 proxy-groups:
   - name: 🐟 漏网之鱼
     type: select
@@ -58,245 +73,350 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 🏡 房间
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 🇭🇰 客厅电脑
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 电视
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 妈妈和彩萍
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 国外
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
   - name: 国内
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 🇭🇰香港1
-      - 🇭🇰香港2
-      - 🇭🇰香港3
-      - 🇭🇰香港4
-      - 🇭🇰香港5
-      - 🇭🇰香港6
-      - 🇯🇵日本1
-      - 🇯🇵日本2
-      - 🇯🇵日本3
-      - 🇯🇵日本4
-      - 🇯🇵日本5
-      - 🇯🇵日本6
-      - 🇸🇬新加坡1
-      - 🇸🇬新加坡2
-      - 🇸🇬新加坡3
-      - 🇸🇬新加坡4
-      - 🇸🇬新加坡5
-      - 🇸🇬新加坡6
-      - 🇺🇸美国1
-      - 🇺🇸美国2
-      - 🇺🇸美国3
-      - 🇺🇸美国4
-      - 🇺🇸美国5
-      - 🇺🇸美国6
-      - 🇬🇧英国1
-      - 🇬🇧英国2
-      - 🇹🇷土耳其1
-      - 🇹🇷土耳其2
-      - 🇳🇱防失联https://kelayun.notepin.co
-      - 🇳🇱永久官网https://kelayun.notepin.co
+      - 香港测试3-解锁
+      - 台湾家宽
+      - 新加坡家宽
+      - 马来西亚家宽
+      - 日本bage直连
+      - 印度尼西亚家宽
+      - 日本家宽1
+      - 越南家宽
+      - 韩国家宽2
+      - 拉脱维亚家宽
+      - 瑞典家宽
+      - 美国测试-解锁
+      - 韩国家宽1
+      - 芬兰家宽
+      - 🇩🇪德国稳定
+      - 瑞士家宽
+      - 罗马尼亚家宽
+      - 英国家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 捷克家宽
+      - 加拿大家宽3
+      - 法国家宽
+      - 荷兰家宽
+      - 匈牙利家宽
+      - 以色列测试
+      - 西班牙家宽
+      - 美国家宽1
+      - 德国家宽
+      - 意大利家宽
+      - 比利时家宽
+      - 澳大利亚测试
+      - 挪威家宽
+      - 美国家宽2
+      - 波兰家宽
+      - 哥伦比亚家宽
+      - 南非家宽
+      - 墨西哥家宽
+      - 智利家宽
+      - 哥斯达黎加家宽
+      - 留尼汪家宽
+      - 巴拉圭家宽
+      - 纳米比亚家宽
+      - 🇯🇵日本02
+      - 立陶苑家宽
 rules:
   - MATCH,🐟 漏网之鱼
