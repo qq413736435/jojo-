@@ -1,644 +1,830 @@
-port: 7890
-socks-port: 7891
+mixed-port: 7890
 allow-lan: true
 mode: Rule
 log-level: info
-external-controller: '127.0.0.1:9090'
-clash-for-android:
-    append-system-dns: false
-sniffer:
-    sniff: { TLS: { ports: [1-65535], override-destination: true }, HTTP: { ports: [1-65535], override-destination: true } }
-    enable: true
-    force-domain: [+.netflix.com]
-    skip-domain: ['Mijia Cloud', dlg.io.mi.com]
-    parse-pure-ip: true
-    force-dns-mapping: true
-    override-destination: true
-unified-delay: true
+external-controller: 0.0.0.0:9090
 dns:
-    enable: true
-    ipv6: false
-    listen: '0.0.0.0:1053'
-    use-hosts: true
-    default-nameserver: [119.29.29.29, 223.5.5.5, 180.184.1.1]
-    nameserver: ['https://1.12.12.12/dns-query', 'https://dns.alidns.com/dns-query', 'tls://223.6.6.6:853']
-    fake-ip-range: 198.18.0.1/16
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 proxies:
-    - { name: 🇭🇰香港01-解锁, type: trojan, server: zhaji188.klian.icu, port: 48001, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, skip-cert-verify: true, sni: hk1-zou.xiaoqi888.online, network: tcp }
-    - { name: 🇭🇰香港02-解锁, type: trojan, server: zhaji188.klian.icu, port: 48002, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, skip-cert-verify: true, sni: hk-bage1.xiao666666.site, network: tcp }
-    - { name: 🇯🇵日本01-解锁, type: trojan, server: zhaji188.klian.icu, port: 47002, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, skip-cert-verify: false, sni: jp-bage1.xiao666666.site, network: tcp }
-    - { name: 🇯🇵日本02, type: trojan, server: zhaji188.klian.icu, port: 48006, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, skip-cert-verify: true, sni: jp02.xiaoqi888.online, network: tcp }
-    - { name: 香港阿里游戏专线, server: alhk.xiaoqi888.online, port: 50000, sni: iosapps.itunes.apple.com, up: 100, down: 100, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 韩国游戏专线2, server: alikr2.xiaoqi888.online, port: 51969, sni: www.bing.com, up: 100, down: 100, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 香港腾讯游戏专线, server: txhk.xiaoqi888.online, port: 56000, sni: iosapps.itunes.apple.com, up: null, down: null, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 英国, server: zhaji-uk.xiao666666.site, port: 50457, sni: iosapps.itunes.apple.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 美国家宽o2, server: usjk2.xiaoqi888.online, port: 50340, sni: iosapps.itunes.apple.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 荷兰, server: zhaji-hl.xiao666666.site, port: 54239, sni: iosapps.itunes.apple.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 澳大利亚do-hy2, server: au-do.xiaoqi888.online, port: 50000, sni: www.microsoft.com, up: null, down: null, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 新加坡游戏专线, server: alisg.xiaoqi888.online, port: 56000, sni: www.bing.com, up: 100, down: 100, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 韩国游戏专线1, server: alikr1.xiaoqi888.online, port: 50825, sni: www.bing.com, up: 100, down: 100, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 日本阿里游戏专线, server: ali-jp-xq.xiao666666.site, port: 40000, sni: www.bing.com, up: 100, down: 100, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 澳大利亚hy2, server: au-oracle.xiaoqi888.online, port: 17010, sni: www.bing.com, up: null, down: null, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 新加坡2do-hy2, server: doxjp2.xiaoqi888.online, port: 50000, sni: doxjp2.xiaoqi888.online, up: null, down: null, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 美国家宽o, server: usjk.xiaoqi888.online, port: 50338, sni: usjk.xiaoqi888.online, up: null, down: 200, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 美国do-hy2, server: dous1.xiaoqi888.online, port: 55000, sni: www.bing.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 新加坡do-hy2, server: doxjp1.xiaoqi888.online, port: 52982, sni: www.bing.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 日本bage, server: jp-bage1.xiao666666.site, port: 51710, sni: www.microsoft.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 新加坡bage, server: bage-sg1.xiao666666.site, port: 53380, sni: bage-sg1.xiao666666.site, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, obfs: salamander, obfs-password: asdfghjkl }
-    - { name: 香港hkt1, server: hkt1nat.xiao666666.site, port: 61234, sni: hkt1nat.xiao666666.site, up: 1000, down: 1000, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 香港bage1, server: hk-bage1.xiao666666.site, port: 51240, sni: www.microsoft.com, up: null, down: null, skip-cert-verify: true, ports: 50000-55000, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 台湾hy2, server: tw1.aifjj.asia, port: 61001, sni: www.microsoft.com, up: null, down: null, skip-cert-verify: true, type: hysteria2, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e }
-    - { name: 香港any, type: anytls, server: hk-bage1.xiao666666.site, port: 40000, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, sni: www.bing.com, skip-cert-verify: true }
-    - { name: 日本any, type: anytls, server: jp-bage1.xiao666666.site, port: 40000, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, sni: www.bing.com, skip-cert-verify: true }
-    - { name: 新加坡any, type: anytls, server: bage-sg1.xiao666666.site, port: 40000, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, sni: www.bing.com, skip-cert-verify: true }
-    - { name: 洛杉矶any, type: anytls, server: bage-lsj1.xiao666666.site, port: 50001, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, sni: www.bing.com, skip-cert-verify: true }
-    - { name: 德国any, type: anytls, server: bagedg.xiaoqi888.online, port: 40000, password: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, udp: true, sni: www.bing.com, skip-cert-verify: true }
-    - { name: 🇭🇰香港稳定, type: vless, server: zhaji188.klian.icu, port: 47004, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: iosapps.itunes.apple.com, reality-opts: { public-key: UPNLQsISJgCwjE1jlYDtFqr90E1t6z2_KoBzFrJVznM, short-id: 01ce71 }, client-fingerprint: chrome }
-    - { name: 🇰🇷韩国稳定, type: vless, server: zhaji188.klian.icu, port: 60003, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: null, tls: true, skip-cert-verify: true, servername: iosapps.itunes.apple.com, reality-opts: { public-key: xyicrkjnCfV8d7FDH5ybvxahEyXRvCkqju-ez29SfwA, short-id: a2fcbb9fb72832 }, client-fingerprint: firefox }
-    - { name: 🇸🇬新加坡稳定, type: vless, server: zhaji188.klian.icu, port: 48004, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: iosapps.itunes.apple.com, reality-opts: { public-key: UuOLh5Sdo_zSLZWZ1_4XgnL0Zn4thLqBO40FMKB73E4, short-id: ef18be80 }, client-fingerprint: firefox }
-    - { name: 🇺🇸洛杉矶稳定, type: vless, server: zhaji188.klian.icu, port: 47003, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: iosapps.itunes.apple.com, reality-opts: { public-key: GZdWUHm54Xuea5zb6JK32DEcku1_SDnjsXrCOGCN3l0, short-id: 2d7a8e94 }, client-fingerprint: ios }
-    - { name: 🇯🇵日本稳定, type: vless, server: zhaji188.klian.icu, port: 56000, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: null, tls: true, skip-cert-verify: true, servername: iosapps.itunes.apple.com, reality-opts: { public-key: GZdWUHm54Xuea5zb6JK32DEcku1_SDnjsXrCOGCN3l0, short-id: 2d7a8e94 }, client-fingerprint: ios }
-    - { name: 日本bage直连, type: vless, server: jp-bage1.xiao666666.site, port: 443, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: download-porter.hoyoverse.com, reality-opts: { public-key: x4cxf9OLN-C3j_gROGpnl1gf0HuSmuir-TKUqRNI83k, short-id: aa71f6e05d316250 }, client-fingerprint: edge }
-    - { name: 🇩🇪德国稳定, type: vless, server: bagedg.xiaoqi888.online, port: 30000, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, flow: xtls-rprx-vision, tls: true, skip-cert-verify: true, servername: download-porter.hoyoverse.com, reality-opts: { public-key: 8-GU9MzKnvXb9xU4LdZzxQK4kMmqy2jtXOUZX3Chd34, short-id: 86a715 }, client-fingerprint: safari }
-    - { name: 西班牙家宽, type: vmess, server: xq.751334.xyz, port: 11000, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 美国家宽1, type: vmess, server: xq.751334.xyz, port: 11001, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 美国家宽2, type: vmess, server: xq.751334.xyz, port: 11002, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 墨西哥家宽, type: vmess, server: xq.751334.xyz, port: 11003, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 日本家宽1, type: vmess, server: xq.751334.xyz, port: 11004, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 瑞士家宽, type: vmess, server: xq.751334.xyz, port: 11005, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 台湾家宽, type: vmess, server: xq.751334.xyz, port: 11006, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 新加坡家宽, type: vmess, server: xq.751334.xyz, port: 11007, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 匈牙利家宽, type: vmess, server: xq.751334.xyz, port: 11008, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 马来西亚家宽, type: vmess, server: xq.751334.xyz, port: 11009, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 立陶苑家宽, type: vmess, server: xq.751334.xyz, port: 11010, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 英国家宽, type: vmess, server: xq.751334.xyz, port: 11011, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 德国家宽, type: vmess, server: xq.751334.xyz, port: 11012, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 法国家宽, type: vmess, server: xq.751334.xyz, port: 11013, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 加拿大家宽3, type: vmess, server: xq.751334.xyz, port: 11014, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 罗马尼亚家宽, type: vmess, server: xq.751334.xyz, port: 11015, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 韩国家宽1, type: vmess, server: xq.751334.xyz, port: 11016, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 意大利家宽, type: vmess, server: xq.751334.xyz, port: 11017, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 比利时家宽, type: vmess, server: xq.751334.xyz, port: 11018, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 南非家宽, type: vmess, server: xq.751334.xyz, port: 11019, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 越南家宽, type: vmess, server: xq.751334.xyz, port: 11020, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 乌干达家宽, type: vmess, server: xq.751334.xyz, port: 11021, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: '特克斯和凯科斯群岛 家宽', type: vmess, server: xq.751334.xyz, port: 11022, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 斯洛伐克家宽, type: vmess, server: xq.751334.xyz, port: 11023, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 斯洛文尼亚家宽, type: vmess, server: xq.751334.xyz, port: 11024, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 俄罗斯家宽, type: vmess, server: xq.751334.xyz, port: 11025, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 巴哈马家宽, type: vmess, server: xq.751334.xyz, port: 11026, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 保加利亚家宽, type: vmess, server: xq.751334.xyz, port: 11027, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 奥地利家宽, type: vmess, server: xq.751334.xyz, port: 11028, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 巴西家宽, type: vmess, server: xq.751334.xyz, port: 11029, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 博茨瓦纳家宽, type: vmess, server: xq.751334.xyz, port: 11030, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 加拿大家宽1, type: vmess, server: xq.751334.xyz, port: 11031, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 加拿大家宽2, type: vmess, server: xq.751334.xyz, port: 11032, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 智利家宽, type: vmess, server: xq.751334.xyz, port: 11033, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 哥伦比亚家宽, type: vmess, server: xq.751334.xyz, port: 11034, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 哥斯达黎加家宽, type: vmess, server: xq.751334.xyz, port: 11035, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 捷克家宽, type: vmess, server: xq.751334.xyz, port: 11036, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 芬兰家宽, type: vmess, server: xq.751334.xyz, port: 11037, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 希腊家宽, type: vmess, server: xq.751334.xyz, port: 11038, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 危地马拉家宽, type: vmess, server: xq.751334.xyz, port: 11039, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 印度家宽, type: vmess, server: xq.751334.xyz, port: 11040, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 伊拉克家宽, type: vmess, server: xq.751334.xyz, port: 11041, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 日本家宽2, type: vmess, server: xq.751334.xyz, port: 11042, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 日本家宽3, type: vmess, server: xq.751334.xyz, port: 11043, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 日本家宽4, type: vmess, server: xq.751334.xyz, port: 11044, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 拉脱维亚家宽, type: vmess, server: xq.751334.xyz, port: 11045, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 纳米比亚家宽, type: vmess, server: xq.751334.xyz, port: 11046, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 荷兰家宽, type: vmess, server: xq.751334.xyz, port: 11047, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 挪威家宽, type: vmess, server: xq.751334.xyz, port: 11048, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 波兰家宽, type: vmess, server: xq.751334.xyz, port: 11049, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 巴拉圭家宽, type: vmess, server: xq.751334.xyz, port: 11050, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 留尼汪家宽, type: vmess, server: xq.751334.xyz, port: 11051, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 瑞典家宽, type: vmess, server: xq.751334.xyz, port: 11052, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 韩国家宽2, type: vmess, server: xq.751334.xyz, port: 11053, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 印度尼西亚家宽, type: vmess, server: xq.751334.xyz, port: 11054, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: tcp }
-    - { name: 澳大利亚测试, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: au-oracle.yiyuan.live } } }
-    - { name: 美国测试-解锁, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: us-lsj-cf.yiyuan.live } } }
-    - { name: 以色列测试, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: ysl-cf.yiyuan.live } } }
-    - { name: 香港测试3-解锁, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hk-bage-year-8t.xiao666666.site } } }
-    - { name: 韩国测试, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: jpcf.412656.xyz } } }
-    - { name: 香港测试1, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hkbycf.412656.xyz } } }
-    - { name: 香港测试2, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: hkbycf2.412656.xyz } } }
-    - { name: 新加坡测试, type: vmess, server: cf.090227.xyz, port: 80, uuid: 095bfcda-a149-49a8-85b1-2fbe57e4f81e, alterId: 0, cipher: auto, udp: true, network: ws, ws-opts: { path: /, headers: { Host: sgcf-zj.412656.xyz } } }
+  - {"type":"vmess","name":"剩余流量：177.18GB","ws-opts":{"path":"/","headers":{"host":"v2ray.com"}},"server":"127.0.0.1","port":"443","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"距离下次重置剩余：6天","ws-opts":{"path":"/","headers":{"host":"v2ray.com"}},"server":"127.0.0.1","port":"443","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"套餐到期：2025-11-29","ws-opts":{"path":"/","headers":{"host":"v2ray.com"}},"server":"127.0.0.1","port":"443","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"每日5点更新！官网yzc.博森科技.com","ws-opts":{"path":"/","headers":{"host":"v2ray.com"}},"server":"127.0.0.1","port":"443","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"节点监控站：tz.博森科技.com","ws-opts":{"path":"/","headers":{"host":"v2ray.com"}},"server":"127.0.0.1","port":"443","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国内-深圳05x1-速率自测","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"120.241.229.42","port":"18080","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国内-宁波03x1.5-速率还行","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"110.42.62.170","port":"8080","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国内-宿迁01x2-G口速率","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"36.156.187.61","port":"8080","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-中国香港32x2.5-深移隧道","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"120.241.229.42","port":"10000","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-中国香港34x2.5-深移隧道","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"120.241.229.42","port":"10001","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-中国香港35x2.5-深移隧道","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"120.241.229.42","port":"10002","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-日本13x1.5-速率自测","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"74.113.96.125","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-日本14x1-到期清退","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"154.83.92.94","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-日本15x2-大陆优化","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"38.207.130.62","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-中国台湾04x2-大陆优化","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"hinetiw0k.starvm.top","port":"10390","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-英国02x1-流量已空","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"89.213.40.128","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-美国04x2-下载可以","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"38.150.7.188","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-法国03x0.5-下载可以","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"2603:c026:c103:8400:d726:c9d6:2bed:163","port":"91","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"国外-德国04x1-下载可以","ws-opts":{"path":"/","headers":{"host":"gw.alicdn.com"}},"server":"156.226.174.182","port":"558","uuid":"70885d9b-b942-44c2-99fb-fd317caa78b2","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vmess","name":"🇭🇰香港01-解锁","server":"zhaji188.klian.icu","port":"48001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇭🇰香港02-解锁","server":"zhaji188.klian.icu","port":"48002","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇭🇰香港03-解锁","server":"zhaji188.klian.icu","port":"49001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇭🇰香港04-负载解锁","server":"zhaji188.klian.icu","port":"60001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇯🇵日本01-解锁","server":"zhaji188.klian.icu","port":"47002","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇯🇵日本02-家宽解锁","server":"zhaji188.klian.icu","port":"48006","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇯🇵日本03-负载解锁","server":"zhaji188.klian.icu","port":"36000","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇸🇬新加坡01-解锁","server":"zhaji188.klian.icu","port":"47001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"🇸🇬新加坡02","server":"zhaji188.klian.icu","port":"48007","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"ss","name":"香港ipv6","server":"txv6.xiao666666.site","port":30000,"cipher":"aes-256-gcm","password":"095bfcda-a149-49a8-85b1-2fbe57e4f81e"}
+  - {"type":"vless","name":"🇭🇰香港稳定","server":"zhaji188.klian.icu","port":47004,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇰🇷韩国稳定","server":"zhaji188.klian.icu","port":60003,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇸🇬新加坡稳定","server":"zhaji188.klian.icu","port":48004,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇺🇸洛杉矶稳定","server":"zhaji188.klian.icu","port":47003,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇯🇵日本稳定","server":"zhaji188.klian.icu","port":56000,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇩🇪德国稳定","server":"bagedg.xiaoqi888.online","port":30000,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"download-porter.hoyoverse.com","tls":false,"udp":true}
+  - {"type":"vless","name":"香港无忧中转","server":"wyddns.5653111.xyz","port":20591,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇸🇬新加坡中转1","server":"twddns.5653111.xyz","port":46001,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"香港测试中转tw","server":"nattw1.bytevirt.net","port":32005,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇯🇵日本中转","server":"twddns.5653111.xyz","port":45000,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"香港测试中转hkt","server":"nathkt1.bytevirt.net","port":31655,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇭🇰香港中转","server":"twddns.5653111.xyz","port":30702,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"日本无忧中转","server":"wyddns.5653111.xyz","port":20592,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇭🇰香港中转2","server":"twddns.5653111.xyz","port":30703,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"download-porter.hoyoverse.com","tls":false,"udp":true}
+  - {"type":"vless","name":"🇸🇬新加坡中转2","server":"twddns.5653111.xyz","port":51004,"uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","servername":"iosapps.itunes.apple.com","tls":false,"udp":true}
+  - {"type":"vmess","name":"西班牙家宽","server":"xq.751334.xyz","port":"11000","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"美国家宽1","server":"xq.751334.xyz","port":"11001","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"美国家宽2","server":"xq.751334.xyz","port":"11002","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"墨西哥家宽","server":"xq.751334.xyz","port":"11003","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"日本家宽1","server":"xq.751334.xyz","port":"11004","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"瑞士家宽","server":"xq.751334.xyz","port":"11005","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"台湾家宽","server":"xq.751334.xyz","port":"11006","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"新加坡家宽","server":"xq.751334.xyz","port":"11007","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"匈牙利家宽","server":"xq.751334.xyz","port":"11008","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"马来西亚家宽","server":"xq.751334.xyz","port":"11009","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"立陶苑家宽","server":"xq.751334.xyz","port":"11010","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"英国家宽","server":"xq.751334.xyz","port":"11011","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"德国家宽","server":"xq.751334.xyz","port":"11012","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"法国家宽","server":"xq.751334.xyz","port":"11013","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽3","server":"xq.751334.xyz","port":"11014","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"罗马尼亚家宽","server":"xq.751334.xyz","port":"11015","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"韩国家宽1","server":"xq.751334.xyz","port":"11016","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"意大利家宽","server":"xq.751334.xyz","port":"11017","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"比利时家宽","server":"xq.751334.xyz","port":"11018","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"南非家宽","server":"xq.751334.xyz","port":"11019","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"越南家宽","server":"xq.751334.xyz","port":"11020","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"乌干达家宽","server":"xq.751334.xyz","port":"11021","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"特克斯和凯科斯群岛家宽","server":"xq.751334.xyz","port":"11022","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"斯洛伐克家宽","server":"xq.751334.xyz","port":"11023","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"斯洛文尼亚家宽","server":"xq.751334.xyz","port":"11024","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"俄罗斯家宽","server":"xq.751334.xyz","port":"11025","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"巴哈马家宽","server":"xq.751334.xyz","port":"11026","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"保加利亚家宽","server":"xq.751334.xyz","port":"11027","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"奥地利家宽","server":"xq.751334.xyz","port":"11028","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"巴西家宽","server":"xq.751334.xyz","port":"11029","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"博茨瓦纳家宽","server":"xq.751334.xyz","port":"11030","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽1","server":"xq.751334.xyz","port":"11031","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"加拿大家宽2","server":"xq.751334.xyz","port":"11032","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"智利家宽","server":"xq.751334.xyz","port":"11033","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"哥伦比亚家宽","server":"xq.751334.xyz","port":"11034","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"哥斯达黎加家宽","server":"xq.751334.xyz","port":"11035","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"捷克家宽","server":"xq.751334.xyz","port":"11036","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"芬兰家宽","server":"xq.751334.xyz","port":"11037","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"希腊家宽","server":"xq.751334.xyz","port":"11038","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"危地马拉家宽","server":"xq.751334.xyz","port":"11039","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"印度家宽","server":"xq.751334.xyz","port":"11040","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"伊拉克家宽","server":"xq.751334.xyz","port":"11041","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"日本家宽2","server":"xq.751334.xyz","port":"11042","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"日本家宽3","server":"xq.751334.xyz","port":"11043","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"日本家宽4","server":"xq.751334.xyz","port":"11044","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"拉脱维亚家宽","server":"xq.751334.xyz","port":"11045","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"纳米比亚家宽","server":"xq.751334.xyz","port":"11046","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"荷兰家宽","server":"xq.751334.xyz","port":"11047","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"挪威家宽","server":"xq.751334.xyz","port":"11048","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"波兰家宽","server":"xq.751334.xyz","port":"11049","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"巴拉圭家宽","server":"xq.751334.xyz","port":"11050","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"留尼汪家宽","server":"xq.751334.xyz","port":"11051","uuid":"095bfcda-a149-49a8-85b1-2fbe57e4f81e","alterId":"0","cipher":"auto","network":"tcp"}
 proxy-groups:
-    - { name: 七七云, type: select, proxies: [自动选择, 故障转移, 🇭🇰香港01-解锁, 🇭🇰香港02-解锁, 🇯🇵日本01-解锁, 🇯🇵日本02, 香港阿里游戏专线, 韩国游戏专线2, 香港腾讯游戏专线, 英国, 美国家宽o2, 荷兰, 澳大利亚do-hy2, 新加坡游戏专线, 韩国游戏专线1, 日本阿里游戏专线, 澳大利亚hy2, 新加坡2do-hy2, 美国家宽o, 美国do-hy2, 新加坡do-hy2, 日本bage, 新加坡bage, 香港hkt1, 香港bage1, 台湾hy2, 香港any, 日本any, 新加坡any, 洛杉矶any, 德国any, 🇭🇰香港稳定, 🇰🇷韩国稳定, 🇸🇬新加坡稳定, 🇺🇸洛杉矶稳定, 🇯🇵日本稳定, 日本bage直连, 🇩🇪德国稳定, 西班牙家宽, 美国家宽1, 美国家宽2, 墨西哥家宽, 日本家宽1, 瑞士家宽, 台湾家宽, 新加坡家宽, 匈牙利家宽, 马来西亚家宽, 立陶苑家宽, 英国家宽, 德国家宽, 法国家宽, 加拿大家宽3, 罗马尼亚家宽, 韩国家宽1, 意大利家宽, 比利时家宽, 南非家宽, 越南家宽, 乌干达家宽, '特克斯和凯科斯群岛 家宽', 斯洛伐克家宽, 斯洛文尼亚家宽, 俄罗斯家宽, 巴哈马家宽, 保加利亚家宽, 奥地利家宽, 巴西家宽, 博茨瓦纳家宽, 加拿大家宽1, 加拿大家宽2, 智利家宽, 哥伦比亚家宽, 哥斯达黎加家宽, 捷克家宽, 芬兰家宽, 希腊家宽, 危地马拉家宽, 印度家宽, 伊拉克家宽, 日本家宽2, 日本家宽3, 日本家宽4, 拉脱维亚家宽, 纳米比亚家宽, 荷兰家宽, 挪威家宽, 波兰家宽, 巴拉圭家宽, 留尼汪家宽, 瑞典家宽, 韩国家宽2, 印度尼西亚家宽, 澳大利亚测试, 美国测试-解锁, 以色列测试, 香港测试3-解锁, 韩国测试, 香港测试1, 香港测试2, 新加坡测试] }
-    - { name: 自动选择, type: url-test, proxies: [🇭🇰香港01-解锁, 🇭🇰香港02-解锁, 🇯🇵日本01-解锁, 🇯🇵日本02, 香港阿里游戏专线, 韩国游戏专线2, 香港腾讯游戏专线, 英国, 美国家宽o2, 荷兰, 澳大利亚do-hy2, 新加坡游戏专线, 韩国游戏专线1, 日本阿里游戏专线, 澳大利亚hy2, 新加坡2do-hy2, 美国家宽o, 美国do-hy2, 新加坡do-hy2, 日本bage, 新加坡bage, 香港hkt1, 香港bage1, 台湾hy2, 香港any, 日本any, 新加坡any, 洛杉矶any, 德国any, 🇭🇰香港稳定, 🇰🇷韩国稳定, 🇸🇬新加坡稳定, 🇺🇸洛杉矶稳定, 🇯🇵日本稳定, 日本bage直连, 🇩🇪德国稳定, 西班牙家宽, 美国家宽1, 美国家宽2, 墨西哥家宽, 日本家宽1, 瑞士家宽, 台湾家宽, 新加坡家宽, 匈牙利家宽, 马来西亚家宽, 立陶苑家宽, 英国家宽, 德国家宽, 法国家宽, 加拿大家宽3, 罗马尼亚家宽, 韩国家宽1, 意大利家宽, 比利时家宽, 南非家宽, 越南家宽, 乌干达家宽, '特克斯和凯科斯群岛 家宽', 斯洛伐克家宽, 斯洛文尼亚家宽, 俄罗斯家宽, 巴哈马家宽, 保加利亚家宽, 奥地利家宽, 巴西家宽, 博茨瓦纳家宽, 加拿大家宽1, 加拿大家宽2, 智利家宽, 哥伦比亚家宽, 哥斯达黎加家宽, 捷克家宽, 芬兰家宽, 希腊家宽, 危地马拉家宽, 印度家宽, 伊拉克家宽, 日本家宽2, 日本家宽3, 日本家宽4, 拉脱维亚家宽, 纳米比亚家宽, 荷兰家宽, 挪威家宽, 波兰家宽, 巴拉圭家宽, 留尼汪家宽, 瑞典家宽, 韩国家宽2, 印度尼西亚家宽, 澳大利亚测试, 美国测试-解锁, 以色列测试, 香港测试3-解锁, 韩国测试, 香港测试1, 香港测试2, 新加坡测试], url: 'https://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: [🇭🇰香港01-解锁, 🇭🇰香港02-解锁, 🇯🇵日本01-解锁, 🇯🇵日本02, 香港阿里游戏专线, 韩国游戏专线2, 香港腾讯游戏专线, 英国, 美国家宽o2, 荷兰, 澳大利亚do-hy2, 新加坡游戏专线, 韩国游戏专线1, 日本阿里游戏专线, 澳大利亚hy2, 新加坡2do-hy2, 美国家宽o, 美国do-hy2, 新加坡do-hy2, 日本bage, 新加坡bage, 香港hkt1, 香港bage1, 台湾hy2, 香港any, 日本any, 新加坡any, 洛杉矶any, 德国any, 🇭🇰香港稳定, 🇰🇷韩国稳定, 🇸🇬新加坡稳定, 🇺🇸洛杉矶稳定, 🇯🇵日本稳定, 日本bage直连, 🇩🇪德国稳定, 西班牙家宽, 美国家宽1, 美国家宽2, 墨西哥家宽, 日本家宽1, 瑞士家宽, 台湾家宽, 新加坡家宽, 匈牙利家宽, 马来西亚家宽, 立陶苑家宽, 英国家宽, 德国家宽, 法国家宽, 加拿大家宽3, 罗马尼亚家宽, 韩国家宽1, 意大利家宽, 比利时家宽, 南非家宽, 越南家宽, 乌干达家宽, '特克斯和凯科斯群岛 家宽', 斯洛伐克家宽, 斯洛文尼亚家宽, 俄罗斯家宽, 巴哈马家宽, 保加利亚家宽, 奥地利家宽, 巴西家宽, 博茨瓦纳家宽, 加拿大家宽1, 加拿大家宽2, 智利家宽, 哥伦比亚家宽, 哥斯达黎加家宽, 捷克家宽, 芬兰家宽, 希腊家宽, 危地马拉家宽, 印度家宽, 伊拉克家宽, 日本家宽2, 日本家宽3, 日本家宽4, 拉脱维亚家宽, 纳米比亚家宽, 荷兰家宽, 挪威家宽, 波兰家宽, 巴拉圭家宽, 留尼汪家宽, 瑞典家宽, 韩国家宽2, 印度尼西亚家宽, 澳大利亚测试, 美国测试-解锁, 以色列测试, 香港测试3-解锁, 韩国测试, 香港测试1, 香港测试2, 新加坡测试], url: 'https://www.gstatic.com/generate_204', interval: 7200 }
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🛩️ 手机
+      - 🏡 房间
+      - 🇭🇰 客厅电脑
+      - REJECT
+      - DIRECT
+  - name: 🛩️ 手机
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 🏡 房间
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 🇭🇰 客厅电脑
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 电视
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 妈妈和彩萍
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 国外
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
+  - name: 国内
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 剩余流量：177.18GB
+      - 距离下次重置剩余：6天
+      - 套餐到期：2025-11-29
+      - 每日5点更新！官网yzc.博森科技.com
+      - 节点监控站：tz.博森科技.com
+      - 国内-深圳05x1-速率自测
+      - 国内-宁波03x1.5-速率还行
+      - 国内-宿迁01x2-G口速率
+      - 国外-中国香港32x2.5-深移隧道
+      - 国外-中国香港34x2.5-深移隧道
+      - 国外-中国香港35x2.5-深移隧道
+      - 国外-日本13x1.5-速率自测
+      - 国外-日本14x1-到期清退
+      - 国外-日本15x2-大陆优化
+      - 国外-中国台湾04x2-大陆优化
+      - 国外-英国02x1-流量已空
+      - 国外-美国04x2-下载可以
+      - 国外-法国03x0.5-下载可以
+      - 国外-德国04x1-下载可以
+      - 🇭🇰香港01-解锁
+      - 🇭🇰香港02-解锁
+      - 🇭🇰香港03-解锁
+      - 🇭🇰香港04-负载解锁
+      - 🇯🇵日本01-解锁
+      - 🇯🇵日本02-家宽解锁
+      - 🇯🇵日本03-负载解锁
+      - 🇸🇬新加坡01-解锁
+      - 🇸🇬新加坡02
+      - 香港ipv6
+      - 🇭🇰香港稳定
+      - 🇰🇷韩国稳定
+      - 🇸🇬新加坡稳定
+      - 🇺🇸洛杉矶稳定
+      - 🇯🇵日本稳定
+      - 🇩🇪德国稳定
+      - 香港无忧中转
+      - 🇸🇬新加坡中转1
+      - 香港测试中转tw
+      - 🇯🇵日本中转
+      - 香港测试中转hkt
+      - 🇭🇰香港中转
+      - 日本无忧中转
+      - 🇭🇰香港中转2
+      - 🇸🇬新加坡中转2
+      - 西班牙家宽
+      - 美国家宽1
+      - 美国家宽2
+      - 墨西哥家宽
+      - 日本家宽1
+      - 瑞士家宽
+      - 台湾家宽
+      - 新加坡家宽
+      - 匈牙利家宽
+      - 马来西亚家宽
+      - 立陶苑家宽
+      - 英国家宽
+      - 德国家宽
+      - 法国家宽
+      - 加拿大家宽3
+      - 罗马尼亚家宽
+      - 韩国家宽1
+      - 意大利家宽
+      - 比利时家宽
+      - 南非家宽
+      - 越南家宽
+      - 乌干达家宽
+      - 特克斯和凯科斯群岛家宽
+      - 斯洛伐克家宽
+      - 斯洛文尼亚家宽
+      - 俄罗斯家宽
+      - 巴哈马家宽
+      - 保加利亚家宽
+      - 奥地利家宽
+      - 巴西家宽
+      - 博茨瓦纳家宽
+      - 加拿大家宽1
+      - 加拿大家宽2
+      - 智利家宽
+      - 哥伦比亚家宽
+      - 哥斯达黎加家宽
+      - 捷克家宽
+      - 芬兰家宽
+      - 希腊家宽
+      - 危地马拉家宽
+      - 印度家宽
+      - 伊拉克家宽
+      - 日本家宽2
+      - 日本家宽3
+      - 日本家宽4
+      - 拉脱维亚家宽
+      - 纳米比亚家宽
+      - 荷兰家宽
+      - 挪威家宽
+      - 波兰家宽
+      - 巴拉圭家宽
+      - 留尼汪家宽
 rules:
-    - 'DOMAIN,77.xiaoqi999.space,DIRECT'
-    - 'DOMAIN-SUFFIX,services.googleapis.cn,七七云'
-    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,七七云'
-    - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
-    - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
-    - 'DOMAIN,developer.apple.com,七七云'
-    - 'DOMAIN-SUFFIX,digicert.com,七七云'
-    - 'DOMAIN,ocsp.apple.com,七七云'
-    - 'DOMAIN,ocsp.comodoca.com,七七云'
-    - 'DOMAIN,ocsp.usertrust.com,七七云'
-    - 'DOMAIN,ocsp.sectigo.com,七七云'
-    - 'DOMAIN,ocsp.verisign.net,七七云'
-    - 'DOMAIN-SUFFIX,apple-dns.net,七七云'
-    - 'DOMAIN,testflight.apple.com,七七云'
-    - 'DOMAIN,sandbox.itunes.apple.com,七七云'
-    - 'DOMAIN,itunes.apple.com,七七云'
-    - 'DOMAIN-SUFFIX,apps.apple.com,七七云'
-    - 'DOMAIN-SUFFIX,blobstore.apple.com,七七云'
-    - 'DOMAIN,cvws.icloud-content.com,七七云'
-    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
-    - 'DOMAIN-SUFFIX,me.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
-    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
-    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
-    - 'DOMAIN-SUFFIX,126.com,DIRECT'
-    - 'DOMAIN-SUFFIX,126.net,DIRECT'
-    - 'DOMAIN-SUFFIX,127.net,DIRECT'
-    - 'DOMAIN-SUFFIX,163.com,DIRECT'
-    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
-    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
-    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
-    - 'DOMAIN-KEYWORD,alipay,DIRECT'
-    - 'DOMAIN-KEYWORD,taobao,DIRECT'
-    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
-    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
-    - 'DOMAIN-KEYWORD,baidu,DIRECT'
-    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
-    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
-    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
-    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
-    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
-    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
-    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
-    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
-    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
-    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
-    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
-    - 'DOMAIN-SUFFIX,le.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,licdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoft.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoftonline.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
-    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
-    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
-    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
-    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
-    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
-    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
-    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
-    - 'DOMAIN-KEYWORD,amazon,七七云'
-    - 'DOMAIN-KEYWORD,google,七七云'
-    - 'DOMAIN-KEYWORD,gmail,七七云'
-    - 'DOMAIN-KEYWORD,youtube,七七云'
-    - 'DOMAIN-KEYWORD,facebook,七七云'
-    - 'DOMAIN-SUFFIX,fb.me,七七云'
-    - 'DOMAIN-SUFFIX,fbcdn.net,七七云'
-    - 'DOMAIN-KEYWORD,twitter,七七云'
-    - 'DOMAIN-KEYWORD,instagram,七七云'
-    - 'DOMAIN-KEYWORD,dropbox,七七云'
-    - 'DOMAIN-SUFFIX,twimg.com,七七云'
-    - 'DOMAIN-KEYWORD,blogspot,七七云'
-    - 'DOMAIN-SUFFIX,youtu.be,七七云'
-    - 'DOMAIN-KEYWORD,whatsapp,七七云'
-    - 'DOMAIN-KEYWORD,admarvel,REJECT'
-    - 'DOMAIN-KEYWORD,admaster,REJECT'
-    - 'DOMAIN-KEYWORD,adsage,REJECT'
-    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
-    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
-    - 'DOMAIN-KEYWORD,adwords,REJECT'
-    - 'DOMAIN-KEYWORD,adservice,REJECT'
-    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
-    - 'DOMAIN-KEYWORD,domob,REJECT'
-    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
-    - 'DOMAIN-KEYWORD,duomeng,REJECT'
-    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
-    - 'DOMAIN-KEYWORD,guanggao,REJECT'
-    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
-    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
-    - 'DOMAIN-KEYWORD,mopub,REJECT'
-    - 'DOMAIN-KEYWORD,omgmta,REJECT'
-    - 'DOMAIN-KEYWORD,openx,REJECT'
-    - 'DOMAIN-KEYWORD,partnerad,REJECT'
-    - 'DOMAIN-KEYWORD,pingfore,REJECT'
-    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
-    - 'DOMAIN-KEYWORD,uedas,REJECT'
-    - 'DOMAIN-KEYWORD,umeng,REJECT'
-    - 'DOMAIN-KEYWORD,usage,REJECT'
-    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
-    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
-    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
-    - 'DOMAIN-SUFFIX,9to5mac.com,七七云'
-    - 'DOMAIN-SUFFIX,abpchina.org,七七云'
-    - 'DOMAIN-SUFFIX,adblockplus.org,七七云'
-    - 'DOMAIN-SUFFIX,adobe.com,七七云'
-    - 'DOMAIN-SUFFIX,akamaized.net,七七云'
-    - 'DOMAIN-SUFFIX,alfredapp.com,七七云'
-    - 'DOMAIN-SUFFIX,amplitude.com,七七云'
-    - 'DOMAIN-SUFFIX,ampproject.org,七七云'
-    - 'DOMAIN-SUFFIX,android.com,七七云'
-    - 'DOMAIN-SUFFIX,angularjs.org,七七云'
-    - 'DOMAIN-SUFFIX,aolcdn.com,七七云'
-    - 'DOMAIN-SUFFIX,apkpure.com,七七云'
-    - 'DOMAIN-SUFFIX,appledaily.com,七七云'
-    - 'DOMAIN-SUFFIX,appshopper.com,七七云'
-    - 'DOMAIN-SUFFIX,appspot.com,七七云'
-    - 'DOMAIN-SUFFIX,arcgis.com,七七云'
-    - 'DOMAIN-SUFFIX,archive.org,七七云'
-    - 'DOMAIN-SUFFIX,armorgames.com,七七云'
-    - 'DOMAIN-SUFFIX,aspnetcdn.com,七七云'
-    - 'DOMAIN-SUFFIX,att.com,七七云'
-    - 'DOMAIN-SUFFIX,awsstatic.com,七七云'
-    - 'DOMAIN-SUFFIX,azureedge.net,七七云'
-    - 'DOMAIN-SUFFIX,azurewebsites.net,七七云'
-    - 'DOMAIN-SUFFIX,bing.com,七七云'
-    - 'DOMAIN-SUFFIX,bintray.com,七七云'
-    - 'DOMAIN-SUFFIX,bit.com,七七云'
-    - 'DOMAIN-SUFFIX,bit.ly,七七云'
-    - 'DOMAIN-SUFFIX,bitbucket.org,七七云'
-    - 'DOMAIN-SUFFIX,bjango.com,七七云'
-    - 'DOMAIN-SUFFIX,bkrtx.com,七七云'
-    - 'DOMAIN-SUFFIX,blog.com,七七云'
-    - 'DOMAIN-SUFFIX,blogcdn.com,七七云'
-    - 'DOMAIN-SUFFIX,blogger.com,七七云'
-    - 'DOMAIN-SUFFIX,blogsmithmedia.com,七七云'
-    - 'DOMAIN-SUFFIX,blogspot.com,七七云'
-    - 'DOMAIN-SUFFIX,blogspot.hk,七七云'
-    - 'DOMAIN-SUFFIX,bloomberg.com,七七云'
-    - 'DOMAIN-SUFFIX,box.com,七七云'
-    - 'DOMAIN-SUFFIX,box.net,七七云'
-    - 'DOMAIN-SUFFIX,cachefly.net,七七云'
-    - 'DOMAIN-SUFFIX,chromium.org,七七云'
-    - 'DOMAIN-SUFFIX,cl.ly,七七云'
-    - 'DOMAIN-SUFFIX,cloudflare.com,七七云'
-    - 'DOMAIN-SUFFIX,cloudfront.net,七七云'
-    - 'DOMAIN-SUFFIX,cloudmagic.com,七七云'
-    - 'DOMAIN-SUFFIX,cmail19.com,七七云'
-    - 'DOMAIN-SUFFIX,cnet.com,七七云'
-    - 'DOMAIN-SUFFIX,cocoapods.org,七七云'
-    - 'DOMAIN-SUFFIX,comodoca.com,七七云'
-    - 'DOMAIN-SUFFIX,crashlytics.com,七七云'
-    - 'DOMAIN-SUFFIX,culturedcode.com,七七云'
-    - 'DOMAIN-SUFFIX,d.pr,七七云'
-    - 'DOMAIN-SUFFIX,danilo.to,七七云'
-    - 'DOMAIN-SUFFIX,dayone.me,七七云'
-    - 'DOMAIN-SUFFIX,db.tt,七七云'
-    - 'DOMAIN-SUFFIX,deskconnect.com,七七云'
-    - 'DOMAIN-SUFFIX,disq.us,七七云'
-    - 'DOMAIN-SUFFIX,disqus.com,七七云'
-    - 'DOMAIN-SUFFIX,disquscdn.com,七七云'
-    - 'DOMAIN-SUFFIX,dnsimple.com,七七云'
-    - 'DOMAIN-SUFFIX,docker.com,七七云'
-    - 'DOMAIN-SUFFIX,dribbble.com,七七云'
-    - 'DOMAIN-SUFFIX,droplr.com,七七云'
-    - 'DOMAIN-SUFFIX,duckduckgo.com,七七云'
-    - 'DOMAIN-SUFFIX,dueapp.com,七七云'
-    - 'DOMAIN-SUFFIX,dytt8.net,七七云'
-    - 'DOMAIN-SUFFIX,edgecastcdn.net,七七云'
-    - 'DOMAIN-SUFFIX,edgekey.net,七七云'
-    - 'DOMAIN-SUFFIX,edgesuite.net,七七云'
-    - 'DOMAIN-SUFFIX,engadget.com,七七云'
-    - 'DOMAIN-SUFFIX,entrust.net,七七云'
-    - 'DOMAIN-SUFFIX,eurekavpt.com,七七云'
-    - 'DOMAIN-SUFFIX,evernote.com,七七云'
-    - 'DOMAIN-SUFFIX,fabric.io,七七云'
-    - 'DOMAIN-SUFFIX,fast.com,七七云'
-    - 'DOMAIN-SUFFIX,fastly.net,七七云'
-    - 'DOMAIN-SUFFIX,fc2.com,七七云'
-    - 'DOMAIN-SUFFIX,feedburner.com,七七云'
-    - 'DOMAIN-SUFFIX,feedly.com,七七云'
-    - 'DOMAIN-SUFFIX,feedsportal.com,七七云'
-    - 'DOMAIN-SUFFIX,fiftythree.com,七七云'
-    - 'DOMAIN-SUFFIX,firebaseio.com,七七云'
-    - 'DOMAIN-SUFFIX,flexibits.com,七七云'
-    - 'DOMAIN-SUFFIX,flickr.com,七七云'
-    - 'DOMAIN-SUFFIX,flipboard.com,七七云'
-    - 'DOMAIN-SUFFIX,g.co,七七云'
-    - 'DOMAIN-SUFFIX,gabia.net,七七云'
-    - 'DOMAIN-SUFFIX,geni.us,七七云'
-    - 'DOMAIN-SUFFIX,gfx.ms,七七云'
-    - 'DOMAIN-SUFFIX,ggpht.com,七七云'
-    - 'DOMAIN-SUFFIX,ghostnoteapp.com,七七云'
-    - 'DOMAIN-SUFFIX,git.io,七七云'
-    - 'DOMAIN-KEYWORD,github,七七云'
-    - 'DOMAIN-SUFFIX,globalsign.com,七七云'
-    - 'DOMAIN-SUFFIX,gmodules.com,七七云'
-    - 'DOMAIN-SUFFIX,godaddy.com,七七云'
-    - 'DOMAIN-SUFFIX,golang.org,七七云'
-    - 'DOMAIN-SUFFIX,gongm.in,七七云'
-    - 'DOMAIN-SUFFIX,goo.gl,七七云'
-    - 'DOMAIN-SUFFIX,goodreaders.com,七七云'
-    - 'DOMAIN-SUFFIX,goodreads.com,七七云'
-    - 'DOMAIN-SUFFIX,gravatar.com,七七云'
-    - 'DOMAIN-SUFFIX,gstatic.com,七七云'
-    - 'DOMAIN-SUFFIX,gvt0.com,七七云'
-    - 'DOMAIN-SUFFIX,hockeyapp.net,七七云'
-    - 'DOMAIN-SUFFIX,hotmail.com,七七云'
-    - 'DOMAIN-SUFFIX,icons8.com,七七云'
-    - 'DOMAIN-SUFFIX,ifixit.com,七七云'
-    - 'DOMAIN-SUFFIX,ift.tt,七七云'
-    - 'DOMAIN-SUFFIX,ifttt.com,七七云'
-    - 'DOMAIN-SUFFIX,iherb.com,七七云'
-    - 'DOMAIN-SUFFIX,imageshack.us,七七云'
-    - 'DOMAIN-SUFFIX,img.ly,七七云'
-    - 'DOMAIN-SUFFIX,imgur.com,七七云'
-    - 'DOMAIN-SUFFIX,imore.com,七七云'
-    - 'DOMAIN-SUFFIX,instapaper.com,七七云'
-    - 'DOMAIN-SUFFIX,ipn.li,七七云'
-    - 'DOMAIN-SUFFIX,is.gd,七七云'
-    - 'DOMAIN-SUFFIX,issuu.com,七七云'
-    - 'DOMAIN-SUFFIX,itgonglun.com,七七云'
-    - 'DOMAIN-SUFFIX,itun.es,七七云'
-    - 'DOMAIN-SUFFIX,ixquick.com,七七云'
-    - 'DOMAIN-SUFFIX,j.mp,七七云'
-    - 'DOMAIN-SUFFIX,js.revsci.net,七七云'
-    - 'DOMAIN-SUFFIX,jshint.com,七七云'
-    - 'DOMAIN-SUFFIX,jtvnw.net,七七云'
-    - 'DOMAIN-SUFFIX,justgetflux.com,七七云'
-    - 'DOMAIN-SUFFIX,kat.cr,七七云'
-    - 'DOMAIN-SUFFIX,klip.me,七七云'
-    - 'DOMAIN-SUFFIX,libsyn.com,七七云'
-    - 'DOMAIN-SUFFIX,linkedin.com,七七云'
-    - 'DOMAIN-SUFFIX,line-apps.com,七七云'
-    - 'DOMAIN-SUFFIX,linode.com,七七云'
-    - 'DOMAIN-SUFFIX,lithium.com,七七云'
-    - 'DOMAIN-SUFFIX,littlehj.com,七七云'
-    - 'DOMAIN-SUFFIX,live.com,七七云'
-    - 'DOMAIN-SUFFIX,live.net,七七云'
-    - 'DOMAIN-SUFFIX,livefilestore.com,七七云'
-    - 'DOMAIN-SUFFIX,llnwd.net,七七云'
-    - 'DOMAIN-SUFFIX,macid.co,七七云'
-    - 'DOMAIN-SUFFIX,macromedia.com,七七云'
-    - 'DOMAIN-SUFFIX,macrumors.com,七七云'
-    - 'DOMAIN-SUFFIX,mashable.com,七七云'
-    - 'DOMAIN-SUFFIX,mathjax.org,七七云'
-    - 'DOMAIN-SUFFIX,medium.com,七七云'
-    - 'DOMAIN-SUFFIX,mega.co.nz,七七云'
-    - 'DOMAIN-SUFFIX,mega.nz,七七云'
-    - 'DOMAIN-SUFFIX,megaupload.com,七七云'
-    - 'DOMAIN-SUFFIX,microsofttranslator.com,七七云'
-    - 'DOMAIN-SUFFIX,mindnode.com,七七云'
-    - 'DOMAIN-SUFFIX,mobile01.com,七七云'
-    - 'DOMAIN-SUFFIX,modmyi.com,七七云'
-    - 'DOMAIN-SUFFIX,msedge.net,七七云'
-    - 'DOMAIN-SUFFIX,myfontastic.com,七七云'
-    - 'DOMAIN-SUFFIX,name.com,七七云'
-    - 'DOMAIN-SUFFIX,nextmedia.com,七七云'
-    - 'DOMAIN-SUFFIX,nsstatic.net,七七云'
-    - 'DOMAIN-SUFFIX,nssurge.com,七七云'
-    - 'DOMAIN-SUFFIX,nyt.com,七七云'
-    - 'DOMAIN-SUFFIX,nytimes.com,七七云'
-    - 'DOMAIN-SUFFIX,omnigroup.com,七七云'
-    - 'DOMAIN-SUFFIX,onedrive.com,七七云'
-    - 'DOMAIN-SUFFIX,onenote.com,七七云'
-    - 'DOMAIN-SUFFIX,ooyala.com,七七云'
-    - 'DOMAIN-SUFFIX,openvpn.net,七七云'
-    - 'DOMAIN-SUFFIX,openwrt.org,七七云'
-    - 'DOMAIN-SUFFIX,orkut.com,七七云'
-    - 'DOMAIN-SUFFIX,osxdaily.com,七七云'
-    - 'DOMAIN-SUFFIX,outlook.com,七七云'
-    - 'DOMAIN-SUFFIX,ow.ly,七七云'
-    - 'DOMAIN-SUFFIX,paddleapi.com,七七云'
-    - 'DOMAIN-SUFFIX,parallels.com,七七云'
-    - 'DOMAIN-SUFFIX,parse.com,七七云'
-    - 'DOMAIN-SUFFIX,pdfexpert.com,七七云'
-    - 'DOMAIN-SUFFIX,periscope.tv,七七云'
-    - 'DOMAIN-SUFFIX,pinboard.in,七七云'
-    - 'DOMAIN-SUFFIX,pinterest.com,七七云'
-    - 'DOMAIN-SUFFIX,pixelmator.com,七七云'
-    - 'DOMAIN-SUFFIX,pixiv.net,七七云'
-    - 'DOMAIN-SUFFIX,playpcesor.com,七七云'
-    - 'DOMAIN-SUFFIX,playstation.com,七七云'
-    - 'DOMAIN-SUFFIX,playstation.com.hk,七七云'
-    - 'DOMAIN-SUFFIX,playstation.net,七七云'
-    - 'DOMAIN-SUFFIX,playstationnetwork.com,七七云'
-    - 'DOMAIN-SUFFIX,pushwoosh.com,七七云'
-    - 'DOMAIN-SUFFIX,rime.im,七七云'
-    - 'DOMAIN-SUFFIX,servebom.com,七七云'
-    - 'DOMAIN-SUFFIX,sfx.ms,七七云'
-    - 'DOMAIN-SUFFIX,shadowsocks.org,七七云'
-    - 'DOMAIN-SUFFIX,sharethis.com,七七云'
-    - 'DOMAIN-SUFFIX,shazam.com,七七云'
-    - 'DOMAIN-SUFFIX,skype.com,七七云'
-    - 'DOMAIN-SUFFIX,smartdns七七云.com,七七云'
-    - 'DOMAIN-SUFFIX,smartmailcloud.com,七七云'
-    - 'DOMAIN-SUFFIX,sndcdn.com,七七云'
-    - 'DOMAIN-SUFFIX,sony.com,七七云'
-    - 'DOMAIN-SUFFIX,soundcloud.com,七七云'
-    - 'DOMAIN-SUFFIX,sourceforge.net,七七云'
-    - 'DOMAIN-SUFFIX,spotify.com,七七云'
-    - 'DOMAIN-SUFFIX,squarespace.com,七七云'
-    - 'DOMAIN-SUFFIX,sstatic.net,七七云'
-    - 'DOMAIN-SUFFIX,st.luluku.pw,七七云'
-    - 'DOMAIN-SUFFIX,stackoverflow.com,七七云'
-    - 'DOMAIN-SUFFIX,startpage.com,七七云'
-    - 'DOMAIN-SUFFIX,staticflickr.com,七七云'
-    - 'DOMAIN-SUFFIX,steamcommunity.com,七七云'
-    - 'DOMAIN-SUFFIX,symauth.com,七七云'
-    - 'DOMAIN-SUFFIX,symcb.com,七七云'
-    - 'DOMAIN-SUFFIX,symcd.com,七七云'
-    - 'DOMAIN-SUFFIX,tapbots.com,七七云'
-    - 'DOMAIN-SUFFIX,tapbots.net,七七云'
-    - 'DOMAIN-SUFFIX,tdesktop.com,七七云'
-    - 'DOMAIN-SUFFIX,techcrunch.com,七七云'
-    - 'DOMAIN-SUFFIX,techsmith.com,七七云'
-    - 'DOMAIN-SUFFIX,thepiratebay.org,七七云'
-    - 'DOMAIN-SUFFIX,theverge.com,七七云'
-    - 'DOMAIN-SUFFIX,time.com,七七云'
-    - 'DOMAIN-SUFFIX,timeinc.net,七七云'
-    - 'DOMAIN-SUFFIX,tiny.cc,七七云'
-    - 'DOMAIN-SUFFIX,tinypic.com,七七云'
-    - 'DOMAIN-SUFFIX,tmblr.co,七七云'
-    - 'DOMAIN-SUFFIX,todoist.com,七七云'
-    - 'DOMAIN-SUFFIX,trello.com,七七云'
-    - 'DOMAIN-SUFFIX,trustasiassl.com,七七云'
-    - 'DOMAIN-SUFFIX,tumblr.co,七七云'
-    - 'DOMAIN-SUFFIX,tumblr.com,七七云'
-    - 'DOMAIN-SUFFIX,tweetdeck.com,七七云'
-    - 'DOMAIN-SUFFIX,tweetmarker.net,七七云'
-    - 'DOMAIN-SUFFIX,twitch.tv,七七云'
-    - 'DOMAIN-SUFFIX,txmblr.com,七七云'
-    - 'DOMAIN-SUFFIX,typekit.net,七七云'
-    - 'DOMAIN-SUFFIX,ubertags.com,七七云'
-    - 'DOMAIN-SUFFIX,ublock.org,七七云'
-    - 'DOMAIN-SUFFIX,ubnt.com,七七云'
-    - 'DOMAIN-SUFFIX,ulyssesapp.com,七七云'
-    - 'DOMAIN-SUFFIX,urchin.com,七七云'
-    - 'DOMAIN-SUFFIX,usertrust.com,七七云'
-    - 'DOMAIN-SUFFIX,v.gd,七七云'
-    - 'DOMAIN-SUFFIX,v2ex.com,七七云'
-    - 'DOMAIN-SUFFIX,vimeo.com,七七云'
-    - 'DOMAIN-SUFFIX,vimeocdn.com,七七云'
-    - 'DOMAIN-SUFFIX,vine.co,七七云'
-    - 'DOMAIN-SUFFIX,vivaldi.com,七七云'
-    - 'DOMAIN-SUFFIX,vox-cdn.com,七七云'
-    - 'DOMAIN-SUFFIX,vsco.co,七七云'
-    - 'DOMAIN-SUFFIX,vultr.com,七七云'
-    - 'DOMAIN-SUFFIX,w.org,七七云'
-    - 'DOMAIN-SUFFIX,w3schools.com,七七云'
-    - 'DOMAIN-SUFFIX,webtype.com,七七云'
-    - 'DOMAIN-SUFFIX,wikiwand.com,七七云'
-    - 'DOMAIN-SUFFIX,wikileaks.org,七七云'
-    - 'DOMAIN-SUFFIX,wikimedia.org,七七云'
-    - 'DOMAIN-SUFFIX,wikipedia.com,七七云'
-    - 'DOMAIN-SUFFIX,wikipedia.org,七七云'
-    - 'DOMAIN-SUFFIX,windows.com,七七云'
-    - 'DOMAIN-SUFFIX,windows.net,七七云'
-    - 'DOMAIN-SUFFIX,wire.com,七七云'
-    - 'DOMAIN-SUFFIX,wordpress.com,七七云'
-    - 'DOMAIN-SUFFIX,workflowy.com,七七云'
-    - 'DOMAIN-SUFFIX,wp.com,七七云'
-    - 'DOMAIN-SUFFIX,wsj.com,七七云'
-    - 'DOMAIN-SUFFIX,wsj.net,七七云'
-    - 'DOMAIN-SUFFIX,xda-developers.com,七七云'
-    - 'DOMAIN-SUFFIX,xeeno.com,七七云'
-    - 'DOMAIN-SUFFIX,xiti.com,七七云'
-    - 'DOMAIN-SUFFIX,yahoo.com,七七云'
-    - 'DOMAIN-SUFFIX,yimg.com,七七云'
-    - 'DOMAIN-SUFFIX,ying.com,七七云'
-    - 'DOMAIN-SUFFIX,yoyo.org,七七云'
-    - 'DOMAIN-SUFFIX,ytimg.com,七七云'
-    - 'DOMAIN-SUFFIX,telegra.ph,七七云'
-    - 'DOMAIN-SUFFIX,telegram.org,七七云'
-    - 'IP-CIDR,91.108.4.0/22,七七云,no-resolve'
-    - 'IP-CIDR,91.108.8.0/21,七七云,no-resolve'
-    - 'IP-CIDR,91.108.16.0/22,七七云,no-resolve'
-    - 'IP-CIDR,91.108.56.0/22,七七云,no-resolve'
-    - 'IP-CIDR,149.154.160.0/20,七七云,no-resolve'
-    - 'IP-CIDR6,2001:67c:4e8::/48,七七云,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23d::/48,七七云,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23f::/48,七七云,no-resolve'
-    - 'IP-CIDR,120.232.181.162/32,七七云,no-resolve'
-    - 'IP-CIDR,120.241.147.226/32,七七云,no-resolve'
-    - 'IP-CIDR,120.253.253.226/32,七七云,no-resolve'
-    - 'IP-CIDR,120.253.255.162/32,七七云,no-resolve'
-    - 'IP-CIDR,120.253.255.34/32,七七云,no-resolve'
-    - 'IP-CIDR,120.253.255.98/32,七七云,no-resolve'
-    - 'IP-CIDR,180.163.150.162/32,七七云,no-resolve'
-    - 'IP-CIDR,180.163.150.34/32,七七云,no-resolve'
-    - 'IP-CIDR,180.163.151.162/32,七七云,no-resolve'
-    - 'IP-CIDR,180.163.151.34/32,七七云,no-resolve'
-    - 'IP-CIDR,203.208.39.0/24,七七云,no-resolve'
-    - 'IP-CIDR,203.208.40.0/24,七七云,no-resolve'
-    - 'IP-CIDR,203.208.41.0/24,七七云,no-resolve'
-    - 'IP-CIDR,203.208.43.0/24,七七云,no-resolve'
-    - 'IP-CIDR,203.208.50.0/24,七七云,no-resolve'
-    - 'IP-CIDR,220.181.174.162/32,七七云,no-resolve'
-    - 'IP-CIDR,220.181.174.226/32,七七云,no-resolve'
-    - 'IP-CIDR,220.181.174.34/32,七七云,no-resolve'
-    - 'DOMAIN,injections.adguard.org,DIRECT'
-    - 'DOMAIN,local.adguard.org,DIRECT'
-    - 'DOMAIN-SUFFIX,local,DIRECT'
-    - 'IP-CIDR,127.0.0.0/8,DIRECT'
-    - 'IP-CIDR,172.16.0.0/12,DIRECT'
-    - 'IP-CIDR,192.168.0.0/16,DIRECT'
-    - 'IP-CIDR,10.0.0.0/8,DIRECT'
-    - 'IP-CIDR,17.0.0.0/8,DIRECT'
-    - 'IP-CIDR,100.64.0.0/10,DIRECT'
-    - 'IP-CIDR,224.0.0.0/4,DIRECT'
-    - 'IP-CIDR6,fe80::/10,DIRECT'
-    - 'DOMAIN-SUFFIX,cn,DIRECT'
-    - 'DOMAIN-KEYWORD,-cn,DIRECT'
-    - 'GEOIP,CN,DIRECT'
-    - 'MATCH,七七云'
+  - MATCH,🐟 漏网之鱼
