@@ -1,0 +1,132 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+secret: ""
+
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - tls://1.1.1.1
+
+# 订阅配置
+proxy-providers:
+  my_nodes:
+    type: http
+    url: "https://413736435jojo.dpdns.org/jojo167297?b64"
+    interval: 3600
+    path: ./profiles/my_nodes.yaml
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+      lazy: true
+
+# 代理组配置
+proxy-groups:
+
+  # 增加您要求的其他分组
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🛩️ 手机
+      - 🏡 房间
+      - 🇭🇰 客厅电脑
+      - 电视
+      - 妈妈和彩萍
+      - 国外
+      - 国内
+      - REJECT
+      - DIRECT
+
+  - name: 🛩️ 手机
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 🏡 房间
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 🇭🇰 客厅电脑
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 电视
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 妈妈和彩萍
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 国外
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 国内
+    type: select
+    use:
+      - my_nodes
+    proxies:
+      - DIRECT
+      - REJECT
+
+# 规则
+rules:
+  # 国内网站直连
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,国内
+  
+  # 局域网直连
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  
+  
+  # 国际网站走代理
+  - DOMAIN-SUFFIX,youtube.com,国外
+  - DOMAIN-SUFFIX,google.com,国外
+  - DOMAIN-SUFFIX,facebook.com,国外
+  - DOMAIN-SUFFIX,twitter.com,国外
+  - DOMAIN-SUFFIX,instagram.com,国外
+  - DOMAIN-SUFFIX,netflix.com,国外
+  - DOMAIN-SUFFIX,github.com,国外
+  - DOMAIN-SUFFIX,wikipedia.org,国外
+  
+  # 最终规则
+  - MATCH,🐟 漏网之鱼
